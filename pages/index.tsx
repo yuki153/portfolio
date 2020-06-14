@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import { Button } from '../components/button';
 
 export default function Home() {
   return (
@@ -47,6 +48,8 @@ export default function Home() {
           </a>
         </div>
       </main>
+
+    <Button></Button>
 
       <footer>
         <a
