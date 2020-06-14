@@ -48,3 +48,21 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 - [Gatsby + netlify から next.js + zeit/nowに乗り換えようと試みて(未遂)得られた知見](https://www.terrier.dev/blog/2019/20191202000000-next-js/)
 - [CSS-in-JSのライブラリとして「emotion」を選択している理由](https://qiita.com/__sakito__/items/d240840eef7123f62acf)
 - [styled-components-vs-emotion](https://github.com/jsjoeio/styled-components-vs-emotion)
+
+### emotion enable sourcemap
+
+```bash
+yarn add --dev babel-plugin-emotion
+```
+
+```json
+{
+    "presets": ["next/babel"],
+    "plugins": ["emotion"]
+}
+```
+
+参考
+
+- [emotion 公式 | install](https://emotion.sh/docs/install)
+- [nextjs 公式 | Customizing Babel Config](https://nextjs.org/docs/advanced-features/customizing-babel-config)
