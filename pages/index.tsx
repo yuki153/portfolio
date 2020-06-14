@@ -49,7 +49,7 @@ export default function Home() {
         </div>
       </main>
 
-    <Button></Button>
+      <Button></Button>
 
       <footer>
         <a
