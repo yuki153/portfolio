@@ -1,15 +1,5 @@
-import styled from '@emotion/styled';
+// import styled from '@emotion/styled';
+import Button from '@material-ui/core/Button'
 
-const Btn = styled.div`
-  background-color: #00f;
-  & a {
-      color: #fff;
-  }
-  `;
-
-export const Button = () => (
-  <Btn>
-    <a href="https://google.com">styled component</a>
-  </Btn>
-);
+export default Button;
 

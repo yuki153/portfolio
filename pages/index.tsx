@@ -1,5 +1,10 @@
 import Head from 'next/head'
-import { Button } from '../components/button';
+import Button from '../components/button';
+import styled from '@emotion/styled';
+
+const StyledButton = styled(Button)`
+  margin-bottom: 8px;
+`;
 
 export default function Home() {
   return (
@@ -49,7 +54,7 @@ export default function Home() {
         </div>
       </main>
 
-      <Button></Button>
+      <StyledButton variant="contained" color="primary" >Hello material button</StyledButton>
 
       <footer>
         <a
