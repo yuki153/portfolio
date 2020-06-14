@@ -3,7 +3,7 @@ import Button from '../components/button';
 import styled from '@emotion/styled';
 
 const StyledButton = styled(Button)`
-  margin-bottom: 8px;
+  margin-bottom: 70px;
 `;
 
 export default function Home() {
