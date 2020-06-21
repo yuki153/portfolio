@@ -43,7 +43,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 - css prop 記法ではなく styled component 記法であれば emotion/styled のみを使用すれば良い
 - emotion/styled では jsx pragma コメントは必要ない
 
-参考
+reference:
 
 - [Gatsby + netlify から next.js + zeit/nowに乗り換えようと試みて(未遂)得られた知見](https://www.terrier.dev/blog/2019/20191202000000-next-js/)
 - [CSS-in-JSのライブラリとして「emotion」を選択している理由](https://qiita.com/__sakito__/items/d240840eef7123f62acf)
@@ -62,7 +62,20 @@ yarn add --dev babel-plugin-emotion
 }
 ```
 
-参考
+reference:
 
-- [emotion 公式 | install](https://emotion.sh/docs/install)
-- [nextjs 公式 | Customizing Babel Config](https://nextjs.org/docs/advanced-features/customizing-babel-config)
+- [emotion official | install](https://emotion.sh/docs/install)
+- [nextjs official | Customizing Babel Config](https://nextjs.org/docs/advanced-features/customizing-babel-config)
+
+### setup material-ui
+
+reference:
+
+- [material-ui official | inject First](https://material-ui.com/styles/advanced/#injectfirst)
+- [material-ui official | server-rendering](https://material-ui.com/guides/server-rendering/#server-rendering)
+- [github | next ssr sample](https://github.com/mui-org/material-ui/tree/master/examples/nextjs)
+- [qiita | Material-UI と styled-components を組み合わせ...](https://qiita.com/Ouvill/items/c6761c32d31ffb11e114)
+
+### type
+
+- [qiita | TypeScript で書く React コンポーネントを基礎から理解する](https://qiita.com/sangotaro/items/3ea63110517a1b66745b)
