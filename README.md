@@ -79,3 +79,21 @@ reference:
 ### type
 
 - [qiita | TypeScript で書く React コンポーネントを基礎から理解する](https://qiita.com/sangotaro/items/3ea63110517a1b66745b)
+
+### next type check system
+
+nextjs は `ts-loader` 等は使用されず、`@babel/preset-typescript` を使用して ts → js へトランスパイルしている。型チェックには `fork-ts-checker-webpack-plugin` が以前使用されていたが、build 速度の改善から現在は Typescript API を直接使用して型チェックが行われている。なお型チェックは build 時のみに行われる。
+
+`@babel/preset-typescript` の挙動にはいくつか気をつけるべき点がある。
+またこれは、[transpileModule API](https://github.com/Microsoft/TypeScript/wiki/Using-the-Compiler-API#a-simple-transform-function)（--isolatedModules も同様）を使用した際も同様である。
+
+- const enum は使用できない。
+- Re-exports では export される内容が型情報なのか実装なのか babel or transpileModule API は知る由もない為、その export される変数がトランスパイル後保持されてしまう。結果 re-export する変数が型情報だった場合に、export 元の型情報は削除されている為、参照エラーになる。
+- export 元の処理で実装に関わる処理が行われていても export した先で型情報だけが使用された場合に、export 元のファイルは型のみを扱うものとして認知され削除されてしまう。結果、export 元での実装に関わる処理も実行されない。
+
+reference:
+
+- [Replace 'fork-ts-checker-webpack-plugin' with faster alternative](https://github.com/leosuncin/next.js/commit/db5992db02c37126e4ba9db4b64585ca2f102d54)
+- [qiita | Re-exports 問題](https://qiita.com/jagaapple/items/ce0da04be28c35dc7d4f#1-3-3-re-exports-%E5%95%8F%E9%A1%8C)
+- [qiita | const enum は使用できない](https://qiita.com/jagaapple/items/ce0da04be28c35dc7d4f#1-3-1-typescript%E3%81%B8%E3%81%AE%E6%A9%9F%E8%83%BD%E5%88%B6%E9%99%90)
+- [ms | Type-Only Imports and Export](https://devblogs.microsoft.com/typescript/announcing-typescript-3-8-rc/)
