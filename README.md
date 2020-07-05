@@ -39,6 +39,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 - パフォーマンスの観点では styled-components < emotion
 - SSR考慮の観点では styled-components < emotion
 - ドキュメント量の観点では styled-components > emotion
+- emotion は source map をサポートしている。styled-components は未だ(20-06-28) source map に未対応
 - emotion/core では jsx pragma コメントが必要。
 - css prop 記法ではなく styled component 記法であれば emotion/styled のみを使用すれば良い
 - emotion/styled では jsx pragma コメントは必要ない
@@ -48,6 +49,7 @@ reference:
 - [Gatsby + netlify から next.js + zeit/nowに乗り換えようと試みて(未遂)得られた知見](https://www.terrier.dev/blog/2019/20191202000000-next-js/)
 - [CSS-in-JSのライブラリとして「emotion」を選択している理由](https://qiita.com/__sakito__/items/d240840eef7123f62acf)
 - [styled-components-vs-emotion](https://github.com/jsjoeio/styled-components-vs-emotion)
+- [styled-component support source map progress](https://github.com/styled-components/styled-components/pull/2101)
 
 ### emotion enable sourcemap
 
