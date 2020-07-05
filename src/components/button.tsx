@@ -1,5 +1,5 @@
 // import styled from '@emotion/styled';
-import Button from '@material-ui/core/Button'
+import MuiButton from '@material-ui/core/Button'
 
-export default Button;
+export default MuiButton;
 
