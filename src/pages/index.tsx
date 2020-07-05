@@ -1,12 +1,20 @@
 import Head from 'next/head'
-import Button from '../components/button';
-import styled from '@emotion/styled';
+import MuiButton from '../components/button';
+import { useTheme } from 'emotion-theming';
+import { theme as MuiTheme } from  '../plugins/theme';
 
-const StyledButton = styled(Button)`
-  margin-bottom: 70px;
-`;
+/** @jsx jsx */
+import { css, jsx } from '@emotion/core'
 
+
+
+/**
+ * TODO: material ui @see https://qiita.com/tag1216/items/2935c9979b857bb7701f
+ * TODO: how to styling @see https://qiita.com/Takepepe/items/41e3e7a2f612d7eb094a
+ */
 export default function Home() {
+  const theme = useTheme<typeof MuiTheme>();
+  console.log(theme.spacing(1));
   return (
     <div className="container">
       <Head>
@@ -54,7 +62,7 @@ export default function Home() {
         </div>
       </main>
 
-      <StyledButton variant="contained" color="primary" >Hello material button</StyledButton>
+      <MuiButton variant="contained" color="primary" css={css`margin-bottom: 20px;`}>Hello material button</MuiButton>
 
       <footer>
         <a
